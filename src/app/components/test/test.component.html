@@ -18,21 +18,21 @@
   <!-- виведення значення -->
   <p>{{ inputText }}</p>
 
-  <p>{{ chidlMessage }}</p>
+  <!-- <p>{{ chidlMessage }}</p>
   <button (clik)="sendMessageToParent()">Надішли листа батьку</button>
 
   <p appHighlight [highlightColor]="'blue'">
     Наведіть курсор, щоб побачити ефект!
-  </p>
+  </p> -->
 
-  <p *ngIf="isClickedState; else notClickedState">Кнопка була натиснена</p>
+  <!-- <p *ngIf="isClickedState; else notClickedState">Кнопка була натиснена</p>
   <ng-template #notClickedState>
     <p>Кнопка ще не була натиснена!</p>
   </ng-template>
-  <button (click)="toggleState()">Перемкни стейт</button>
+  <button (click)="toggleState()">Перемкни стейт</button> -->
 
   <!-- для динамічного виведення списків -->
-  <ul>
+  <!-- <ul>
     <li *ngFor="let user of users; index as i">{{ i + 1 }}: {{ user }}</li>
   </ul>
 
@@ -41,33 +41,63 @@
     <p *ngSwitghCase="'paused'">Аплікація призупинена</p>
     <p *ngSwitghCase="'stopped'">Аплікація зупинена</p>
     <p *ngSwitghDefault>Стан аплікації невіломий</p>
-  </div>
+  </div> -->
 
   <!-- перевірка умови за допомогою @if -->
 
-  @if (isClickedState) {
+  <!-- @if (isClickedState) {
   <p>Кнопка була натиснена!</p>
   } @else {
   <p>Кнопка ще не була натиснена!</p>
   }
-  <button (click)="toggleState()">Перемкни стейт</button>
+  <button (click)="toggleState()">Перемкни стейт</button> -->
 
   <!-- Використання @for ітерації по масиву об'єктів -->
-  <ul>
+  <!-- <ul>
     @for (item of items; trak item.id; let idx = $index, e = $even) {
     <li>Фрукт №{{ idx + 1 }}: {{ item.name }}</li>
     } @empty {
     <li>There are no items.</li>
     }
-  </ul>
+  </ul> -->
 
   <!-- Використання @swich для вибору серед альтернативних варіантів -->
 
-  @swich (appState) { @case ("active") {
+  <!-- @swich (appState) { @case ("active") {
   <p>Аплікація активна</p>
   } @case ("paused") {
   <p>Аплікація зупинена</p>
   } @default {
   <p>Стан аплікації невідомий</p>
-  } }
+  } } -->
+
+  <!-- Відображає поточну дату у форматі 'mm/dd/yyyy' -->
+  <p>{{ today | date : "shortDate" }}</p>
+
+  <!-- Перетворює "hello world" на "HELLO WORLD" -->
+  <p>{{ "hello world" | uppercase }}</p>
+
+  <!-- Перетворює "HELLO WORLD" на "hello world" -->
+  <p>{{ "HELLO WORLD" | lowercase }}</p>
+
+  <!-- Відображає число 1500.5 у форматі валюти, наприклад '$1,500.50' -->
+  <p>{{ 1500.5 | currency }}</p>
+
+  <!-- Форматує число 1.23456789 до '1.2345-6'(де 4-6 - це кількість цифр після коми) -->
+  <p>{{ 1.23456789 | number }}</p>
+
+  <!-- Відображає 0.5 як 50% -->
+  <p>{{ 0.5 | percent }}</p>
+
+  <!-- Виділяє підстроку з позиції 1 до 5 (не включно) -->
+  <p>{{ "Hello World" | slice : 1 : 5 }}</p>
+  <!-- виведе 'ello' -->
+
+  <!-- Відображає об'єкт у форматіJSON -->
+
+  <p>{{name: JSON, age: 30 | JSON}}</p>
+
+  <!-- використання пайпу 'trancate' для обрізання тексту -->
+
+  <p>{{ "Довгий текст, який потребує обрізання!" | trancate : 18 }}</p>
 </div>

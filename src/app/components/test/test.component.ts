@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HighlightDirective } from '../../directives/highlight.directive';
+import { TrancatePipe } from '../../pipe/trancate.pipe';
 
 @Component({
   selector: 'app-test',
-  imports: [CommonModule, FormsModule, HighlightDirective],
+  imports: [CommonModule, FormsModule, HighlightDirective, TrancatePipe],
   templateUrl: './test.component.html',
   styleUrl: './test.component.scss',
 })
@@ -25,8 +26,6 @@ export class TestComponent {
 
   users = ['Alina', 'Ivan', 'Serhii', 'Diana'];
 
-  appState = 'activ';
-
   items = [
     { id: 1, name: 'Яблуко' },
     { id: 2, name: 'Банан' },
@@ -34,6 +33,11 @@ export class TestComponent {
     { id: 4, name: 'Ківі' },
     { id: 5, name: 'Виноград' },
   ];
+
+  appState = 'activ';
+
+  today = new Date();
+  longText = 'Дуже довгий текст, який неохідно обрізати';
 
   @Input() childMessage: string = '';
   @Output() messageFromChild = new EventEmitter<string>();
