@@ -53,3 +53,22 @@ button:disabled {
   background-color: #007bff; /* змінений колір фону для стану clicked */
   color: #ffffff;
 }
+
+.add-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.remove-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.todo-item {
+  margin: 10px 0;
+}
