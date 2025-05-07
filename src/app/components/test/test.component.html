@@ -72,10 +72,10 @@
   } } -->
 
   <!-- Відображає поточну дату у форматі 'mm/dd/yyyy' -->
-  <p>{{ today | date : "shortDate" }}</p>
+  <!-- <p>{{ today | date : "shortDate" }}</p> -->
 
   <!-- Перетворює "hello world" на "HELLO WORLD" -->
-  <p>{{ "hello world" | uppercase }}</p>
+  <!-- <p>{{ "hello world" | uppercase }}</p> -->
 
   <!-- Перетворює "HELLO WORLD" на "hello world" -->
   <!-- <p>{{ "HELLO WORLD" | lowercase }}</p> -->
@@ -101,7 +101,7 @@
 
   <!-- <p>{{ "Довгий текст, який потребує обрізання!" | trancate : 18 }}</p> -->
 
-  <div class="todo-container">
+  <!-- <div class="todo-container">
     <input [(ngModel)]="newTask" placeholder="add newTask" class="todo input" />
     <button (click)="addTask()" class="add-btn">Add</button>
 
@@ -111,5 +111,41 @@
         <button (click)="removeTask(i)" class="remove-btn">Remove</button>
       </li>
     </ul>
+  </div> -->
+  <div class="container">
+    <form [formGrup]="complexForm" (ngSabmit)="(onSabmit)">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" formControlName="name" />
+        <div *ngIf="name?.invalid && name?.touched" class="error">
+          This value is invalid.
+        </div>
+      </div>
+
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" formControlName="email" />
+        <div *ngIf="email.invalid && email.touched" class="error">
+          This value is invalid.
+        </div>
+      </div>
+
+      <div>
+        <label for="age">Age:</label>
+        <input type="number" formControlName="age" />
+        <div *ngIf="age.invalid && age.touched" class="error">
+          This value is invalid.
+        </div>
+      </div>
+
+      <div>
+        <label>
+          <input type="checkbox" formControlName="consent" />
+          I agree to the terms and conditions
+        </label>
+      </div>
+
+      <button tupe="submit" [disabled]="!complexForm.valid">Submit</button>
+    </form>
   </div>
 </div>
