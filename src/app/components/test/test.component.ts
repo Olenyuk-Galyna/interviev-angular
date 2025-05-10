@@ -24,7 +24,7 @@ export class TestComponent {
     return isValidAge ? null : { ageInvalid: 'Age must be between 18 and 120' };
   }
 
-  complex Form = new FormGroup({
+  complexForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(2)]);
     email: new FormControl('', [Validators.required, Validators.email]);
     age: new FormControl(null, [Validators.required, this.ageValidator]);
