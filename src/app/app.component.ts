@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-// import { TestComponent } from './components/test/test.component';
+import { TestComponent } from './components/test/test.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
@@ -31,7 +31,7 @@ import { MatTableModule } from '@angular/material/table';
     MatCardModule,
     MatTabsModule,
     MatTableModule,
-    // TestComponent,
+    TestComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -39,5 +39,11 @@ import { MatTableModule } from '@angular/material/table';
 export class AppComponent {
   title = 'interviev-angular';
 
-  messageFormParent = 'Я твій батько';
+  messageFromParent = 'Я твій батько';
+
+  messageFromChild = '';
+
+  getMessageFromChild(message: string) {
+    this.messageFromChild = message;
+  }
 }

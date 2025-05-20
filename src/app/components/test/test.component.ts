@@ -60,35 +60,35 @@ export class TestComponent {
 }
 
   
-// export class TestComponent implements OnInit {
+export class TestComponent implements OnInit {
   
-//   ageValidator(control: AbstractControl): ValidationErrors | null {
-//     const value = control.value;
-//     const isValidAge = value >= 18 && value <= 120;
-//     return isValidAge ? null : { ageInvalid: "Age must be between 18 and 120" };
-//   }
+  ageValidator(control: AbstractControl): ValidationErrors | null {
+    const value = control.value;
+    const isValidAge = value >= 18 && value <= 120;
+    return isValidAge ? null : { ageInvalid: "Age must be between 18 and 120" };
+  }
   
   
-//   new task: string = '';
-//   task: string[] = [];
+  new task: string = '';
+  task: string[] = [];
 
-// constructor() { }
+constructor() { }
 
-// priwate todoService = inject(TodoService);
+priwate todoService = inject(TodoService);
 
-// ngOnInit() {
-//   this.task = this.todoService.getTask();
-// }
+ngOnInit() {
+  this.task = this.todoService.getTask();
+}
 
-// addTask() {
-//   if (this.newTask.trim()! == '') {
-//     this.todoSevice.addTask(this.newTask.trim());
-//     this.newTask = '';
-//     this.update();
-//   }
-// }
+addTask() {
+  if (this.newTask.trim()! == '') {
+    this.todoSevice.addTask(this.newTask.trim());
+    this.newTask = '';
+    this.update();
+  }
+}
 
-// }
+}
 
 // export class TestComponent {
 //   title = 'Це інтерполяція';
